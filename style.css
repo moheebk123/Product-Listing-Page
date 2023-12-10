@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+
+body{
+    padding: 1em;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #3d6bffd4;
+
+    & #container {
+        background: #cdd3e6;
+        border-radius: 10px;
+        width: 60vw;
+        height: 85vh;
+        display: flex;
+        overflow: hidden;
+
+        & #filters {
+            width: 200px;
+            height: 100%;
+            background: #fff;
+            border-right: 1px solid #aaa;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            & > div {
+                border-top: 1px solid #555;
+                padding-block: 0.5em;
+
+                & h3 {
+                    font-weight: 600;
+                    text-align: center;
+                    margin-bottom: 0.6em;
+                }
+            }
+
+            & #category #category-list {
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                gap: 0.3em;
+                text-align: center;
+
+                & .category-item {
+                    font-size: 1.1em;
+                    border-radius: 5px;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #ddd;
+                    }
+                }
+            }
+
+            & #brand {
+                display: none;
+
+                & #brand-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3em;
+                    padding-left: 3em;
+
+                    & input {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            & #rating {
+                display: none;
+
+                & #rating-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3em;
+
+                    & div {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5em;
+                        margin-left: 1em;
+
+                        & input {
+                            cursor: pointer;
+                        }
+
+                        & .star5 {
+                            height: 35px;
+                            width: 70%;
+                        }
+                        & .star4 {
+                            height: 45px;
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        & #product-box {
+            width: calc(100% - 200px);
+            height: 100%;
+            padding: 2em;
+            display: flex;
+            gap: 2em;
+            justify-content: space-evenly;
+            align-items: space-evenly;
+            flex-wrap: wrap;
+            transform: translateY(-20px);
+
+            & .product {
+                border-radius: 10px;
+                width: 25%;
+                height: 50%;
+                background: #fff;
+
+                & #product-image-box {
+                    width: 100%;
+                    height: 70%;
+                    padding: 20px;
+
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                & #content-box {
+                    border-top: 1px solid #ccc;
+                    height: 30%;
+                    padding: 1em;
+
+                    & #rating-box {
+                        height: 1.5em;
+                        width: 80px;
+
+                        & img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & #pagination-box {
+        display: flex;
+        margin-inline: auto;
+        margin-top: 1em;
+
+        & #pages-box {
+            display: flex;
+
+            & div {
+                padding: 0.5em 0.8em;
+                border: 1px solid #555;
+                background: #ddd;
+
+                &.active {
+                    background-color: #aaa;
+
+                    &:hover {
+                        background-color: #aaa;
+                    }
+                }
+
+                &:hover {
+                    background-color: #ccc;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        & .btn {
+            padding: 0.5em 0.8em;
+            border: 1px solid #555;
+            background: #ddd;
+
+            &:hover {
+                background-color: #ccc;
+                cursor: pointer;
+            }
+        }
+    }
+}
