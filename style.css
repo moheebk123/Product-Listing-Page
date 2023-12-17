@@ -134,8 +134,6 @@ body{
             padding: 2em;
             display: flex;
             gap: 2em;
-            justify-content: space-evenly;
-            align-items: space-evenly;
             flex-wrap: wrap;
             transform: translateY(-20px);
             background-repeat: no-repeat;
@@ -143,7 +141,7 @@ body{
             background-position: center;
 
             @media screen and (width <= 425px) {
-                padding: 1em;
+                padding: 0.5em;
             }
             @media screen and (width <= 768px) {
                 width: 100%;
@@ -155,10 +153,10 @@ body{
                 width: 25%;
                 height: 50%;
                 background: #fff;
+                border: 1px solid;
 
                 @media screen and (width <= 425px) {
-                    width: 80%;
-                    height: 400px;
+                    height: 300px;
                 }
 
                 @media screen and (width <= 768px) {
