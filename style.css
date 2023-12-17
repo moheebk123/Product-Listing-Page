@@ -126,8 +126,6 @@ body{
                     }
                 }
             }
-
-
         }
 
         & #product-box {
@@ -140,6 +138,9 @@ body{
             align-items: space-evenly;
             flex-wrap: wrap;
             transform: translateY(-20px);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
 
             @media screen and (width <= 768px) {
                 width: 100%;

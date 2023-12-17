@@ -1,4 +1,5 @@
 const productBox = document.getElementById('product-box');
+const productBoxImage = productBox.querySelector('img');
 const previousPageBtn = document.getElementById('previous-page');
 const nextPageBtn = document.getElementById('next-page');
 const pagesBox = document.getElementById('pages-box');
@@ -237,21 +238,6 @@ const paginationHTML = (length) => {
                     pages[index + 1].classList.add('active');
                     element.classList.remove('active');
 
-                    // if (pages[index + 1].innerText == 1) {
-                    //     productBox.style.transform = "translateY(-20px)";
-                    // } else if (pages[index + 1].innerText == 2) {
-                    //     productBox.style.transform = "translateY(-790px)";
-                    // } else if (pages[index + 1].innerText == 3) {
-                    //     productBox.style.transform = "translateY(-1570px)";
-                    // } else if (pages[index + 1].innerText == 4) {
-                    //     productBox.style.transform = "translateY(-2340px)";
-                    // } else if (pages[index + 1].innerText == 5) {
-                    //     productBox.style.transform = "translateY(-3120px)";
-                    // } else if (pages[index + 1].innerText == 6) {
-                    //     productBox.style.transform = "translateY(-3890px)";
-                    // } else if (pages[index + 1].innerText == 7) {
-                    //     productBox.style.transform = "translateY(-4660px)";
-                    // }
                     if (screenWidth <= 768) {
                         if (pages[index + 1].innerText == 1) {
                             productBox.style.transform = "translateY(-20px)";
@@ -473,6 +459,10 @@ const showProductbyCategory = async (productCategory) => {
 
     const filterProductByCategory = data.filter((product) => product.category.includes(productCategory));
 
+    productBox.style.backgroundImage = '';
+    if (filterProductByCategory.length == 0) {
+        productBox.style.backgroundImage = 'url(./asset/not-found.png)';
+    }
     fillProduct(filterProductByCategory);
 
     if (screenWidth <= 768) {
@@ -491,7 +481,14 @@ const showProductbyCategory = async (productCategory) => {
             const currentRating = Number(rating.value);
             const filterProductByCategoryRating = filterProductByCategory.filter((rate) => rate.rating == currentRating);
 
+            console.log(filterProductByCategoryRating.length);
+
+            productBox.style.backgroundImage = '';
+            if (filterProductByCategoryRating.length == 0) {
+                productBox.style.backgroundImage = 'url(./asset/not-found.png)';
+            }
             fillProduct(filterProductByCategoryRating);
+
 
             if (screenWidth <= 768) {
                 pagesLength = Math.ceil(filterProductByCategoryRating.length / 2);
@@ -509,6 +506,10 @@ const showProductbyCategory = async (productCategory) => {
                     const currentBrand = brand.value;
                     const filterProductByCategoryRatingBrand = filterProductByCategoryRating.filter((brandName) => brandName.brand.includes(currentBrand));
 
+                    productBox.style.backgroundImage = '';
+                    if (filterProductByCategoryRatingBrand.length == 0) {
+                        productBox.style.backgroundImage = 'url(./asset/not-found.png)';
+                    }
                     fillProduct(filterProductByCategoryRatingBrand);
 
                     if (screenWidth <= 768) {
@@ -531,6 +532,10 @@ const showProductbyCategory = async (productCategory) => {
             const currentBrand = brand.value;
             const filterProductByCategoryBrand = filterProductByCategory.filter((brandName) => brandName.brand.includes(currentBrand));
 
+            productBox.style.backgroundImage = '';
+            if (filterProductByCategoryBrand.length == 0) {
+                productBox.style.backgroundImage = 'url(./asset/not-found.png)';
+            }
             fillProduct(filterProductByCategoryBrand);
 
             if (screenWidth <= 768) {
@@ -549,6 +554,10 @@ const showProductbyCategory = async (productCategory) => {
                     const currentRating = Number(rating.value);
                     const filterProductByCategoryBrandRating = filterProductByCategoryBrand.filter((rate) => rate.rating == currentRating);
 
+                    productBox.style.backgroundImage = '';
+                    if (filterProductByCategoryBrandRating.length == 0) {
+                        productBox.style.backgroundImage = 'url(./asset/not-found.png)';
+                    }
                     fillProduct(filterProductByCategoryBrandRating);
 
                     if (screenWidth <= 768) {
@@ -577,6 +586,7 @@ const getProduct = async () => {
 
         return data;
     } catch (err) {
+        productBox.style.backgroundImage = 'url(./asset/not-found.png)';
         console.error(`The error is ${err}`);
     }
 };
