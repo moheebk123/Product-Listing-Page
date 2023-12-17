@@ -155,7 +155,7 @@ body{
                 background: #fff;
 
                 @media screen and (width <= 425px) {
-                    height: 300px;
+                    height: 250px;
                 }
 
                 @media screen and (width <= 768px) {
