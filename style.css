@@ -203,69 +203,53 @@ body{
         align-items: center;
         margin-inline: auto;
         margin-top: 1em;
-
-        & #pages-box {
-            display: flex;
-            flex-wrap: wrap;
-            width: fit-content;
-            max-width: 375px;
-
-            & div {
-                padding: 0.5em 0.8em;
-                border: 1px solid #555;
-                background: #ddd;
-
-                &:nth-child(11){
-                    padding: 0.3em 0.54em;
-                }
-                &:nth-child(12){
-                    padding: 0.3em 0.5em;
-                }
-                &:nth-child(13){
-                    padding: 0.3em 0.52em;
-                }
-                &:nth-child(14){
-                    padding: 0.3em 0.52em;
-                }
-                &:nth-child(15){
-                    padding: 0.3em 0.52em;
-                }
-                &:nth-child(16){
-                    padding: 0.3em 0.51em;
-                }
-                &:nth-child(17){
-                    padding: 0.3em 0.52em;
-                }
-                &:nth-child(18){
-                    padding: 0.3em 0.54em;
-                }
-                &:nth-child(19){
-                    padding: 0.3em 0.52em;
-                }
-                &:nth-child(20){
-                    padding: 0.3em 0.77em;
-                }
-
-                &.active {
-                    background-color: #aaa;
-
-                    &:hover {
-                        background-color: #aaa;
-                    }
-                }
-
-                &:hover {
-                    background-color: #ccc;
-                    cursor: pointer;
-                }
-            }
-        }
-
-        & .btn {
+        flex-wrap: wrap;
+        width: fit-content;
+        max-width: 375px;
+        
+        & div {
             padding: 0.5em 0.8em;
-            height: fit-content;
             border: 1px solid #555;
             background: #ddd;
+
+            &:nth-child(11){
+                padding: 0.3em 0.54em;
+            }
+            &:nth-child(12){
+                padding: 0.3em 0.5em;
+            }
+            &:nth-child(13){
+                padding: 0.3em 0.52em;
+            }
+            &:nth-child(14){
+                padding: 0.3em 0.52em;
+            }
+            &:nth-child(15){
+                padding: 0.3em 0.52em;
+            }
+            &:nth-child(16){
+                padding: 0.3em 0.51em;
+            }
+            &:nth-child(17){
+                padding: 0.3em 0.52em;
+            }
+            &:nth-child(18){
+                padding: 0.3em 0.54em;
+            }
+            &:nth-child(19){
+                padding: 0.3em 0.52em;
+            }
+            &:nth-child(20){
+                padding: 0.3em 0.77em;
+            }
+
+            &.active {
+                background-color: #aaa;
+
+                &:hover {
+                    background-color: #aaa;
+                }
+            }
 
             &:hover {
                 background-color: #ccc;
